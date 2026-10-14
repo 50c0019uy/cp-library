@@ -1,3 +1,5 @@
+// https://github.com/50c0019uy/cp-library/blob/main/cartesian_tree.cpp
+
 #include <cassert>
 #include <functional>
 #include <ranges>

@@ -1,3 +1,5 @@
+// https://github.com/50c0019uy/cp-library/blob/main/binary_trie.cpp
+
 #include <array>
 #include <cassert>
 #include <cstddef>

@@ -1,3 +1,5 @@
+// https://github.com/50c0019uy/cp-library/blob/main/interval_set.cpp
+
 #include <cassert>
 #include <concepts>
 #include <iterator>

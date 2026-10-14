@@ -1,3 +1,5 @@
+// https://github.com/50c0019uy/cp-library/blob/main/RAQ_BIT.cpp
+
 #include <cassert>
 
 #include <atcoder/fenwicktree.hpp>

@@ -1,3 +1,5 @@
+// https://github.com/50c0019uy/cp-library/blob/main/Mos_algorithm.cpp
+
 #include <algorithm>
 #include <cmath>
 #include <concepts>

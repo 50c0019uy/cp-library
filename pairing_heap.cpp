@@ -1,3 +1,5 @@
+// https://github.com/50c0019uy/cp-library/blob/main/pairing_heap.cpp
+
 #include <algorithm>
 #include <cassert>
 #include <concepts>

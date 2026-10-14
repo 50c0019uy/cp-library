@@ -1,3 +1,5 @@
+// https://github.com/50c0019uy/cp-library/blob/main/convex_hull.cpp
+
 #include <algorithm>
 #include <iterator>
 #include <utility>

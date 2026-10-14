@@ -1,3 +1,5 @@
+// https://github.com/50c0019uy/cp-library/blob/main/subset_superset_transform.cpp
+
 #include <bit>
 #include <concepts>
 #include <cstddef>

@@ -1,3 +1,5 @@
+// https://github.com/50c0019uy/cp-library/blob/main/segtree_2d.cpp
+
 #include <algorithm>
 #include <bit>
 #include <cassert>

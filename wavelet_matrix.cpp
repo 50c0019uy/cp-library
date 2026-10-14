@@ -1,3 +1,5 @@
+// https://github.com/50c0019uy/cp-library/blob/main/wavelet_matrix.cpp
+
 #include <array>
 #include <bit>
 #include <cassert>

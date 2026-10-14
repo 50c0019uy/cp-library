@@ -1,3 +1,5 @@
+// https://github.com/50c0019uy/cp-library/blob/main/enumerate_quotient.cpp
+
 #include <cassert>
 #include <cstddef>
 #include <iterator>

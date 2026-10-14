@@ -1,3 +1,5 @@
+// https://github.com/50c0019uy/cp-library/blob/main/persistent_queue.cpp
+
 #include <algorithm>
 #include <array>
 #include <bit>
