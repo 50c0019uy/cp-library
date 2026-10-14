@@ -16,8 +16,6 @@ using namespace std;
 using namespace atcoder;
 using ull = unsigned long long;
 
-ull randint(ull, ull);
-
 class rolling_hash_dynamic;
 
 // 参考 https://qiita.com/keymoon/items/11fac5627672a6d6a9f6
@@ -118,8 +116,8 @@ class rolling_hash {
 	vector<ull> hash1, hash2;
 };
 
-const ull rolling_hash::r1 = randint(2, rolling_hash::MOD - 2);
-const ull rolling_hash::r2 = randint(2, rolling_hash::MOD - 2);
+const ull rolling_hash::r1 = randint(2U, rolling_hash::MOD - 2);
+const ull rolling_hash::r2 = randint(2U, rolling_hash::MOD - 2);
 
 const array<ull, rolling_hash::tab_size> rolling_hash::r1p = [] {
 	array<ull, rolling_hash::tab_size> r1p;

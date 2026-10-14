@@ -18,8 +18,6 @@
 using namespace std;
 using ull = unsigned long long;
 
-ull randint(ull, ull);
-
 template<class T,
 	auto op,
 	auto e = [] { return T{}; },
@@ -395,7 +393,7 @@ class treap {
 			.rsum = v,
 			.lazy = id(),
 			.rev = false,
-			.pri = (uint32_t)randint(0, numeric_limits<uint32_t>::max()),
+			.pri = (uint32_t)randint(0U, numeric_limits<uint32_t>::max()),
 			.size = 1});
 		return nodes.size() - 1;
 	}
