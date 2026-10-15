@@ -73,16 +73,12 @@ class rolling_hash {
 
 	private:
 	static ull mul(const ull a, const ull b) noexcept {
-		constexpr ull MASK31 = (1LL << 31) - 1;
-		constexpr ull MASK30 = (1LL << 30) - 1;
-		const ull au = a >> 31;
-		const ull ad = a & MASK31;
-		const ull bu = b >> 31;
-		const ull bd = b & MASK31;
-		const ull mid = ad * bu + au * bd;
-		const ull midu = mid >> 30;
-		const ull midd = mid & MASK30;
-		return (au * bu * 2 + midu + (midd << 31) + ad * bd) % MOD;
+		using u128 = unsigned __int128;
+		const u128 p = static_cast<u128>(a) * b;
+
+		ull m = (p >> popcount(MOD)) + (p & MOD);
+		if(m >= MOD) m -= MOD;
+		return m;
 	}
 
 	// a**b mod MOD
