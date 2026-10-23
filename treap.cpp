@@ -8,18 +8,14 @@
 #include <limits>
 #include <numeric>
 #include <ranges>
-#include <type_traits>
 #include <utility>
 #include <variant>
 #include <vector>
 
-#include "range/v3/view/repeat_n.hpp"
-
 using namespace std;
-using ull = unsigned long long;
 
 template<class T,
-	auto op,
+	auto op = [](T x, T) { return x; },
 	auto e = [] { return T{}; },
 	class F = monostate,
 	auto mapping = nullptr,
@@ -55,22 +51,24 @@ class treap {
 
 	void heapify(const uint32_t i) {
 		if(isnull(i)) return;
+
 		uint32_t mai = i;
 		if(const uint32_t lch = nodes[i].lchild; not isnull(lch) && nodes[mai].pri < nodes[lch].pri)
 			mai = lch;
 		if(const uint32_t rch = nodes[i].rchild; not isnull(rch) && nodes[mai].pri < nodes[rch].pri)
 			mai = rch;
 		if(mai == i) return;
+
 		swap(nodes[mai].pri, nodes[i].pri);
 		heapify(mai);
 	}
 
 	uint32_t build(input_iterator auto &it, const uint32_t l, const uint32_t r) {
 		if(r - l == 0) return Node::null;
+
 		const uint32_t mid = midpoint(l, r);
 		const uint32_t lch = build(it, l, mid);
-		const uint32_t node = create_node(std::forward<T>(*it));
-		it++;
+		const uint32_t node = create_node(*(it++));
 		const uint32_t rch = build(it, mid + 1, r);
 		nodes[node].lchild = lch;
 		nodes[node].rchild = rch;
@@ -80,21 +78,30 @@ class treap {
 	}
 
 	public:
-	treap(const uint32_t n = 0) : treap(::ranges::views::repeat_n(e(), n)) {}
+	treap(const uint32_t n = 0) : treap(views::repeat(e()) | views::take(n)) {}
 
 	template<std::ranges::sized_range R>
 	requires std::ranges::input_range<R> && convertible_to<std::ranges::range_value_t<R>, T>
-	         && (not same_as<remove_cvref_t<std::ranges::range_value_t<R>>, T>)
-	treap(R &&r) : treap(r | views::transform([](auto &&v) { return static_cast<T>(v); })) {}
-
-	template<std::ranges::sized_range R>
-	requires std::ranges::input_range<R> && same_as<remove_cvref_t<std::ranges::range_value_t<R>>, T>
 	treap(R &&r) {
+		const auto size = std::ranges::size(r);
+		nodes.reserve(1 + size);
 		auto it = std::ranges::begin(r);
-		if constexpr(is_rvalue_reference_v<R &&>) {
-			it = make_move_iterator(it);
+		root = build(it, 0, size);
+	}
+
+	template<std::ranges::input_range R>
+	requires (not std::ranges::sized_range<R>) && convertible_to<std::ranges::range_value_t<R>, T>
+	treap(R &&r) {
+		vector<T> v;
+		if constexpr(std::is_lvalue_reference_v<R &&>) {
+			for(auto &&el : r) v.push_back(el);
+		} else {
+			for(auto &&el : r) v.push_back(std::move(el));
 		}
-		root = build(it, 0, std::ranges::size(r));
+
+		nodes.reserve(1 + v.size());
+		auto it = make_move_iterator(v.begin());
+		build(it, 0, v.size());
 	}
 
 	private:
@@ -121,7 +128,7 @@ class treap {
 
 	// [0, k), [k, size)
 	pair<uint32_t, uint32_t> split(const uint32_t i, const uint32_t k) {
-		if(isnull(i)) return {Node::null, Node::null};
+		if(isnull(i)) return { Node::null, Node::null };
 
 		push(i);
 		Node &node = nodes[i];
@@ -129,11 +136,11 @@ class treap {
 		if(k <= lsize) {
 			const auto [l, r] = split(node.lchild, k);
 			node.lchild = r;
-			return {l, update(i)};
+			return { l, update(i) };
 		} else {
 			const auto [l, r] = split(node.rchild, k - lsize - 1);
 			node.rchild = l;
-			return {update(i), r};
+			return { update(i), r };
 		}
 	}
 
@@ -217,7 +224,7 @@ class treap {
 	}
 
 	private:
-	template<auto Sum>
+	template<T Node::*Sum>
 	[[nodiscard]] T _prod_abs(const uint32_t i, const uint32_t k) {
 		if(k == 0) return e();
 		push(i);
@@ -383,18 +390,18 @@ class treap {
 	}
 
 	private:
-	[[nodiscard]] bool isnull(const uint32_t i) const noexcept {
+	[[nodiscard]] static bool isnull(const uint32_t i) noexcept {
 		return i == Node::null;
 	}
 
 	[[nodiscard]] uint32_t create_node(const T &v) {
-		nodes.push_back(Node{.val = v,
+		nodes.push_back(Node{ .val = v,
 			.sum = v,
 			.rsum = v,
 			.lazy = id(),
 			.rev = false,
 			.pri = (uint32_t)randint(0U, numeric_limits<uint32_t>::max()),
-			.size = 1});
+			.size = 1 });
 		return nodes.size() - 1;
 	}
 
@@ -432,23 +439,5 @@ class treap {
 	}
 
 	uint32_t root = Node::null;
-	vector<Node> nodes{1};
+	vector<Node> nodes{ 1 };
 };
-
-#include <atcoder/modint.hpp>
-
-using mint = atcoder::modint998244353;
-using T = pair<mint, mint>;
-using F = mint;
-
-const auto op = [](const T &a, const T &b) { return T{a.first + b.first, a.second + b.second}; };
-
-const auto e = [] { return T{0, 0}; };
-
-const auto mapping = [](const T &a, const F &f) { return T{a.first + f, a.second + f}; };
-
-const auto composition = [](const F &f, const F &g) { return f + g; };
-
-const auto id = [] { return F{0}; };
-
-template class treap<T, op, e, F, mapping, composition, id>;
