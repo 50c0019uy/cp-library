@@ -1,4 +1,4 @@
-// https://github.com/50c0019uy/cp-library/blob/main/pairing_heap.cpp
+// https://github.com/50c0019uy/cp-library/blob/main/pairing_heap.hpp
 
 #include <algorithm>
 #include <cassert>

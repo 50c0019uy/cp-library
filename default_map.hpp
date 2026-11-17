@@ -1,4 +1,4 @@
-// https://github.com/50c0019uy/cp-library/blob/main/defualt_map.cpp
+// https://github.com/50c0019uy/cp-library/blob/main/defualt_map.hpp
 
 #include <concepts>
 #include <map>

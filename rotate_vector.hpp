@@ -1,4 +1,4 @@
-// https://github.com/50c0019uy/cp-library/blob/main/rotate_vector.cpp
+// https://github.com/50c0019uy/cp-library/blob/main/rotate_vector.hpp
 
 #include <cassert>
 #include <cstddef>

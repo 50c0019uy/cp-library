@@ -1,4 +1,4 @@
-// https://github.com/50c0019uy/cp-library/blob/main/persistent_queue.cpp
+// https://github.com/50c0019uy/cp-library/blob/main/persistent_queue.hpp
 
 #include <algorithm>
 #include <array>

@@ -1,4 +1,4 @@
-// https://github.com/50c0019uy/cp-library/blob/main/subset_superset_transform.cpp
+// https://github.com/50c0019uy/cp-library/blob/main/subset_superset_transform.hpp
 
 #include <bit>
 #include <concepts>

@@ -1,4 +1,4 @@
-// https://github.com/50c0019uy/cp-library/blob/main/binary_trie.cpp
+// https://github.com/50c0019uy/cp-library/blob/main/binary_trie.hpp
 
 #include <array>
 #include <cassert>

@@ -1,4 +1,4 @@
-// https://github.com/50c0019uy/cp-library/blob/main/persistent_segtree.cpp
+// https://github.com/50c0019uy/cp-library/blob/main/persistent_segtree.hpp
 
 #include <bit>
 #include <cassert>

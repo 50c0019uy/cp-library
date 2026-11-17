@@ -1,4 +1,4 @@
-// https://github.com/50c0019uy/cp-library/blob/main/offline_dynamic_connectivity.cpp
+// https://github.com/50c0019uy/cp-library/blob/main/offline_dynamic_connectivity.hpp
 
 #include <algorithm>
 #include <bit>

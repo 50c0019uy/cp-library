@@ -1,4 +1,4 @@
-// https://github.com/50c0019uy/cp-library/blob/main/treap.cpp
+// https://github.com/50c0019uy/cp-library/blob/main/treap.hpp
 
 #include <cassert>
 #include <concepts>

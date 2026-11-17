@@ -1,4 +1,4 @@
-// https://github.com/50c0019uy/cp-library/blob/main/trie.cpp
+// https://github.com/50c0019uy/cp-library/blob/main/trie.hpp
 
 #include <array>
 #include <cassert>

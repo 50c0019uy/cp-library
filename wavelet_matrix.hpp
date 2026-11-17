@@ -1,4 +1,4 @@
-// https://github.com/50c0019uy/cp-library/blob/main/wavelet_matrix.cpp
+// https://github.com/50c0019uy/cp-library/blob/main/wavelet_matrix.hpp
 
 #include <array>
 #include <bit>

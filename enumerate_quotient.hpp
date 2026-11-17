@@ -1,4 +1,4 @@
-// https://github.com/50c0019uy/cp-library/blob/main/enumerate_quotient.cpp
+// https://github.com/50c0019uy/cp-library/blob/main/enumerate_quotient.hpp
 
 #include <cassert>
 #include <cstddef>

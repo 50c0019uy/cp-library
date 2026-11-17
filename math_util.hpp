@@ -1,4 +1,4 @@
-// https://github.com/50c0019uy/cp-library/blob/main/math_util.cpp
+// https://github.com/50c0019uy/cp-library/blob/main/math_util.hpp
 
 #include <array>
 #include <cassert>

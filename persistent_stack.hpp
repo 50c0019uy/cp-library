@@ -1,4 +1,4 @@
-// https://github.com/50c0019uy/cp-library/blob/main/persistent_stack.cpp
+// https://github.com/50c0019uy/cp-library/blob/main/persistent_stack.hpp
 
 #include <cassert>
 #include <cstddef>

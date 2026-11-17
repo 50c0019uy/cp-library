@@ -1,4 +1,4 @@
-// https://github.com/50c0019uy/cp-library/blob/main/interval_set.cpp
+// https://github.com/50c0019uy/cp-library/blob/main/interval_set.hpp
 
 #include <cassert>
 #include <concepts>

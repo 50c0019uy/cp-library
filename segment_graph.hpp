@@ -1,4 +1,4 @@
-// https://github.com/50c0019uy/cp-library/blob/main/segment_graph.cpp
+// https://github.com/50c0019uy/cp-library/blob/main/segment_graph.hpp
 
 #include <algorithm>
 #include <bit>

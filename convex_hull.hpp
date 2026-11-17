@@ -1,4 +1,4 @@
-// https://github.com/50c0019uy/cp-library/blob/main/convex_hull.cpp
+// https://github.com/50c0019uy/cp-library/blob/main/convex_hull.hpp
 
 #include <algorithm>
 #include <iterator>

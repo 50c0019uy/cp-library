@@ -1,4 +1,4 @@
-// https://github.com/50c0019uy/cp-library/blob/main/RAQ_BIT.cpp
+// https://github.com/50c0019uy/cp-library/blob/main/RAQ_BIT.hpp
 
 #include <cassert>
 

@@ -1,4 +1,4 @@
-// https://github.com/50c0019uy/cp-library/blob/main/rolling_hash.cpp
+// https://github.com/50c0019uy/cp-library/blob/main/rolling_hash.hpp
 
 #include <algorithm>
 #include <array>

@@ -1,4 +1,4 @@
-// https://github.com/50c0019uy/cp-library/blob/main/Mos_algorithm.cpp
+// https://github.com/50c0019uy/cp-library/blob/main/Mos_algorithm.hpp
 
 #include <algorithm>
 #include <cmath>

@@ -1,4 +1,4 @@
-// https://github.com/50c0019uy/cp-library/blob/main/unionfind_with_val.cpp
+// https://github.com/50c0019uy/cp-library/blob/main/unionfind_with_val.hpp
 
 #include <cassert>
 #include <concepts>

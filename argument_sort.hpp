@@ -1,4 +1,4 @@
-// https://github.com/50c0019uy/cp-library/blob/main/argument_sort.cpp
+// https://github.com/50c0019uy/cp-library/blob/main/argument_sort.hpp
 
 #include <algorithm>
 #include <utility>

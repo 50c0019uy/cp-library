@@ -1,4 +1,4 @@
-// https://github.com/50c0019uy/cp-library/blob/main/linear_sieve.cpp
+// https://github.com/50c0019uy/cp-library/blob/main/linear_sieve.hpp
 
 #include <algorithm>
 #include <cmath>

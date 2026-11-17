@@ -1,4 +1,4 @@
-// https://github.com/50c0019uy/cp-library/blob/main/persistent_array.cpp
+// https://github.com/50c0019uy/cp-library/blob/main/persistent_array.hpp
 
 #include <array>
 #include <cassert>

@@ -1,4 +1,4 @@
-// https://github.com/50c0019uy/cp-library/blob/main/segtree_2d.cpp
+// https://github.com/50c0019uy/cp-library/blob/main/segtree_2d.hpp
 
 #include <algorithm>
 #include <bit>
